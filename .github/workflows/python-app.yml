@@ -40,7 +40,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Build and push
+    - name: Build and push checker
       uses: docker/build-push-action@v2
       with:
         context: .
@@ -48,3 +48,12 @@ jobs:
         platforms: linux/amd64,linux/arm64,linux/386
         push: true
         tags: abouopensource/tiny_python:latest
+
+    - name: Build and push serve
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./generator-server/Dockerfile
+          platforms: linux/amd64,linux/arm64,linux/386
+          push: true
+          tags: abouopensource/server_part:latest

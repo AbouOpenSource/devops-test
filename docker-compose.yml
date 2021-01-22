@@ -1,0 +1,18 @@
+version: '2'
+services:
+  server:
+    image: abouopensource/tiny_python
+    networks:
+      - network_1
+
+
+
+  tiny_code:
+    networks:
+      - network_1
+
+
+
+networks:
+  network_1:
+    driver: bridge
