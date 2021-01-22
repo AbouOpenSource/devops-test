@@ -48,11 +48,13 @@ jobs:
         platforms: linux/amd64,linux/arm64,linux/386
         push: true
         tags: abouopensource/tiny_python:latest
-    - name: Build and push server
-      uses: docker/build-push-action@v2
-      with:
-        context: ./generator-server
-        file: ./Dockerfile
-        platforms: linux/amd64,linux/arm64,linux/386
-        push: true
-        tags: abouopensource/server_part:latest
+
+
+#    - name: Build and push server
+#      uses: docker/build-push-action@v2
+#      with:
+#        context: ./generator-server
+#        file: ./Dockerfile
+#        platforms: linux/amd64,linux/arm64,linux/386
+#        push: true
+#       tags: abouopensource/server_part:latest
