@@ -2,10 +2,18 @@
 
 import requests
 import sys
+import os
+
+SECRET_KEY = os.environ.get('RUN_IN_DOCKER', False)
+
+if SECRET_KEY:
+    #adress container containing server
+    URL = "server:5000/input"
+else:
+    URL = "http://localhost:5000/input"
 
 from checker import checker
 
-URL = "http://localhost:5000/input"
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         try:

@@ -4,15 +4,15 @@ services:
     image: abouopensource/server_part
     networks:
       - network_1
-
-
+    ports:
+      - 5000:5000
 
   tiny_code:
+    depends_on:
+      - server
     image: abouopensource/tiny_python
     networks:
       - network_1
-
-
 
 networks:
   network_1:
