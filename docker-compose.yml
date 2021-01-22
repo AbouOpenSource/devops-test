@@ -1,13 +1,14 @@
 version: '2'
 services:
   server:
-    image: abouopensource/tiny_python
+    image: abouopensource/server_part
     networks:
       - network_1
 
 
 
   tiny_code:
+    image: abouopensource/tiny_python
     networks:
       - network_1
 
