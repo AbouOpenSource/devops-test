@@ -4,10 +4,9 @@ services:
     image: abouopensource/server_part
     networks:
       - network_1
-    ports:
-      - 5000:5000
-
-  tiny_code:
+    expose:
+      - 5000
+  solver:
     depends_on:
       - server
     image: abouopensource/tiny_python
