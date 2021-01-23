@@ -10,7 +10,6 @@ if RUN_IN_DOCKER:
     #adress container containing server
     URL = "http://server:5000/input"
 else:
-    print("without container")
     URL = "http://localhost:5000/input"
 from checker import checker
 

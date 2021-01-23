@@ -6,7 +6,17 @@ Author : **SANOU Abou**
 We did a small function. This function is inspired from [here](https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/).
 
 In addition, I created a small test file to check if my function is right done.
-
+let execute on first console 
+```shell script
+python generated-server/server.py
+```
+and test the code in another terminal
+```shell script
+python my_solution.py "(((()))))((("
+```
+```shell script
+python my_solution.py 
+```
 ## Step 2
 
 I create a Dockerfile visible on root folder, this dockerfile will build the docker image to encapsulate the solver part.
@@ -57,6 +67,7 @@ I create event on push and pull request.
 
 This event will test the code and pull docker image on docker hub
 
+
 ## Step 4
 
 
@@ -80,7 +91,6 @@ of the text to check.
 ```shell script
 ansible-playbook playbook.yml -i inventory.yml --user vagrant 
 ```
-
 **--user vagrant** because the default user ot the VM is vagrant in my case.
 * I also create a AWS EC2 to deploy the solution. 
 To test it, I added the key timesaver.pem in the project, you can run. 
@@ -88,7 +98,6 @@ I will remove the server in one week. (So if you check after one week, the serve
 ```shell script
 ansible-playbook playbook.yml -i inventory.yml --user ubuntu --key-file timesaver.pem
 ```
-
 To check  wih my remote VM.
 Let go to the folder "ansible" of the project and run the previous command.
 
